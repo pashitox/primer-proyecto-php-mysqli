@@ -4,7 +4,7 @@ move_uploaded_file($_FILES["imagen"]["tmp_name"],"fotografias/" . $_FILES["image
 $imagen=$_FILES["imagen"]["name"];
 $nombre=$_POST['nombre'];
 $pellido=$_POST['apellido'];
-$ocupacion=$_POST['ocupacion'];
+$ocupacio=$_POST['ocupacio'];
 $ND=$_POST['ND'];
 $fechaN=$_POST['fechaN'];
 $nacionalidad=$_POST['nacionalidad'];

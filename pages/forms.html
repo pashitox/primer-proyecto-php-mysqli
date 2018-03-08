@@ -175,14 +175,10 @@
                             
                                 <div class="form-group">
                                     <label>Organizacion u Ocupacion </label>
-                                    <input name="ocupacion"class="form-control" required>
+                                    <input name="ocupacio"class="form-control" required>
                                     <p class="help-block">ocupacion.</p>
                                 </div>
-                                <div class="form-group">
-                                    <label>Cargo</label>
-                                    <input name="cargo" class="form-control" required>
-                                    <p class="help-block">como se desenpeña.</p>
-                                </div>
+
                                 <div class="form-group">
                                     <label>N. de Pasaporte/R.U.T </label>
                                     <input name="ND" type="number" max="10" class="form-control">
@@ -229,6 +225,12 @@
                                        <label>agregar foto Cliente</label>
                                          <input name="imagen" type="file">
                                 </div>
+
+                                <div class="form-group">
+                                        <label>Direcion del departamento</label>
+                                        <textarea name="direccionA" class="form-control" rows="3"></textarea>
+                                    </div>
+
                                 <div class="col-lg-12">
                                         <h2 class="page-header">Seleccion de Apartemento</h2>
                                     </div>
@@ -236,59 +238,56 @@
                                             <label>tipos de apartamentos</label>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="1" checked>1 habitacion
+                                                    <input name="tipoA" type="radio" name="optionsRadios" id="optionsRadios1" value="1" checked>1 habitacion
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="2">2 habitacion
+                                                    <input name="tipoA" type="radio" name="optionsRadios" id="optionsRadios2" value="2">2 habitacion
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label>
-                                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="3">3 habitacion
+                                                    <input name="tipoA" type="radio" name="optionsRadios" id="optionsRadios3" value="3">3 habitacion
                                                 </label>
                                             </div>
                                         </div>
 
 
 
-                                <div class="form-group">
-                                    <label>Direcion del departamento</label>
-                                    <textarea class="form-control" rows="3"></textarea>
-                                </div>
+                              
                                 <div class="form-group">
                                     <label>fecha de estadia</label>
                                 </div>
                                 <div>
                                     <label>F. inicio</label>
-                                    <input type="date" class="form-control">
+                                    <input name="fechai" type="date" class="form-control">
                                     <label>F. final</label>
-                                    <input type="date" class="form-control">
+                                    <input name="fechaf" type="date" class="form-control">
                                     <p class="help-block">Example block-level help text here.</p>
                                 </div>
                                 <div class="form-group">
                                         <label>Observaciones del departamento</label>
-                                        <textarea class="form-control" rows="3"></textarea>
+                                        <textarea name="observ"class="form-control" rows="3"></textarea>
                                     </div>
                                     <div class="col-lg-12">
                                             <h2 class="page-header">Mode de Pago</h2>
                                         </div>
                                     <div class="form-group">
                                             <label>tipos de Pago</label>
-                                            <div class="checkbox">
+                                            <div class="radio">
                                                 <label>
-                                                    <input type="checkbox" value=""> Targeta Debito
+                                                    <input name="tipop" type="radio" value="T.Debito"> Targeta Debito
                                                 </label>
                                             </div>
-                                            <div class="checkbox">
+                                            <div class="radio">
                                                 <label>
-                                                    <input type="checkbox" value=""> Targeta de credito
+                                                    <input  name="tipop" type="radio" value="T.Credito"> Targeta de credito
                                                 </label>
                                             </div>
-                                            <div class="checkbox">
+                                            <div class="radio">
                                                 <label>
-                                                    <input type="checkbox" value=""> Efectivo
+                                                    <input  name="tipop" type="radio" value="Efectivo"> Efectivo
                                                 </label>
                                             </div>
                                         </div>
@@ -297,7 +296,7 @@
                                     <div class="form-group input-group">
                                          
                                             <span class="input-group-addon">$</span>
-                                            <input type="text" class="form-control">
+                                            <input  name="pago" type="number" class="form-control">
                                             <span class="input-group-addon">.00</span>
                                         </div>
                              
