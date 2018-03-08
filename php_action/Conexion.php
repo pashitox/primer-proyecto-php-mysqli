@@ -1,5 +1,5 @@
 <?php
-$dsn='mysql:host=localhost;dbname=login'; //significa Data Source Name o Nombre del Origen de los Datos
+$dsn='mysql:host=localhost;dbname=eldorado'; //significa Data Source Name o Nombre del Origen de los Datos
 $usuario='root';
 $password='';
 
