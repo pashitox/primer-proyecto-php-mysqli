@@ -177,7 +177,7 @@ echo $f["suma"];
                     </div>
                     <a href="#">
                         <div class="panel-footer">
-                            <span class="pull-left">View Details</span>
+                            <span class="pull-left">ver detalles</span>
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 
                             <div class="clearfix"></div>
@@ -192,7 +192,7 @@ echo $f["suma"];
                             <div class="col-xs-3">
                                 <i class="fa fa-tasks fa-5x"></i>
                             </div>
-                            <div class="col-xs-9 text-right">
+                            <div class="col-xs-10 text-right">
                                 <div class="huge"> </div>
                                 <div>New Tasks!</div>
                             </div>
@@ -215,7 +215,7 @@ echo $f["suma"];
                             <div class="col-xs-3">
                                 <i class="fa fa-shopping-cart fa-5x"></i>
                             </div>
-                            <div class="col-xs-9 text-right">
+                            <div class="col-xs-10 text-right">
                                 <div class="huge">$<?php                             
                                 echo $f["suma"];
                                 ?></div>
@@ -240,7 +240,7 @@ echo $f["suma"];
                             <div class="col-xs-3">
                                 <i class="fa fa-support fa-5x"></i>
                             </div>
-                            <div class="col-xs-9 text-right">
+                            <div class="col-xs-10 text-right">
                                 <div class="huge">13</div>
                                 <div>Support Tickets!</div>
                             </div>
