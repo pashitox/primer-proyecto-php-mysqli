@@ -167,7 +167,7 @@ echo $f["suma"];
                             <div class="col-xs-3">
                                 <i class="fa fa-comments fa-5x"></i>
                             </div>
-                            <div class="col-xs-9 text-right">
+                            <div class="col-xs-10 text-right">
                                 <div  class="huge"> <?php                             
                                 echo $countcliente; ?></div>
                              
