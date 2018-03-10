@@ -1,5 +1,5 @@
 <?php 
-include "../10/php_action/Conexion.php";
+include "../primer-proyecto-php-mysqli/php_action/Conexion.php";
 
 $sql = "SELECT * FROM cliente WHERE id";
 $query = $con->query($sql);
