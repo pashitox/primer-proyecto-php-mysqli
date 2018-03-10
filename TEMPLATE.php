@@ -1,3 +1,27 @@
+<?php 
+include "../10/php_action/Conexion.php";
+
+$sql = "SELECT * FROM cliente WHERE id";
+$query = $con->query($sql);
+$countcliente = $query->num_rows;
+
+
+$r = mysqli_query($con, "SELECT SUM(pago) AS suma FROM cliente");
+$f = mysqli_fetch_assoc($r);
+echo $f["suma"];
+
+//$totalRevenue = "";
+//while ($orderResult = $orderQuery->fetch_assoc()) {
+//	$totalRevenue = $orderResult['pago'];
+//}
+
+//$lowStockSql = "SELECT * FROM cliente WHERE quantity <= 3 AND status = 1";
+//$lowStockQuery = $con->query($lowStockSql);
+//$countLowStock = $lowStockQuery->num_rows;
+
+
+
+?>
 
 
 
@@ -125,7 +149,7 @@
                         <a href="../10/pages/forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
                     </li>
                     <li>
-                        <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                        <a href="../10/pages/tables.php"><i class="fa fa-table fa-fw"></i> Tables</a>
                     </li>
                     
                     <li>
@@ -178,8 +202,10 @@
                                 <i class="fa fa-comments fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">26</div>
-                                <div>New Comments!</div>
+                                <div  class="huge"> <?php                             
+                                echo $countcliente; ?></div>
+                             
+                                <div>total clientes</div>
                             </div>
                         </div>
                     </div>
@@ -201,7 +227,7 @@
                                 <i class="fa fa-tasks fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">12</div>
+                                <div class="huge"> </div>
                                 <div>New Tasks!</div>
                             </div>
                         </div>
@@ -224,8 +250,10 @@
                                 <i class="fa fa-shopping-cart fa-5x"></i>
                             </div>
                             <div class="col-xs-9 text-right">
-                                <div class="huge">124</div>
-                                <div>New Orders!</div>
+                                <div class="huge">$<?php                             
+                                echo $f["suma"];
+                                ?></div>
+                                <div>total de pagos!</div>
                             </div>
                         </div>
                     </div>

@@ -1,12 +1,13 @@
 <?php
 
-include('conexion.php');
+include('conexion2.php');
 
-move_uploaded_file($_FILES["imagen"]["tmp_name"],"../fotos" . $_FILES["imagen"]["name"]);			
+move_uploaded_file($_FILES["imagen"]["tmp_name"],"../fotos/fotos" . $_FILES["imagen"]["name"]);	
+		
 $imagen=$_FILES["imagen"]["name"];
 $nombre=$_POST['nombre'];
 $apellido=$_POST['apellido'];
-
+$ocupacio=$_POST['ocupacio'];
 $ND=$_POST['ND'];
 $fechaN=$_POST['fechaN'];
 $nacionalidad=$_POST['nacionalidad'];
@@ -25,9 +26,9 @@ $pago=$_POST['pago'];
 
 
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$sql = "INSERT INTO cliente (imagen, nombre, apellido, ND, 
+$sql = "INSERT INTO cliente (imagen, nombre, apellido, ocupacio, ND, 
 fechaN, nacionalidad, direccion, ciudad, telefono, email, pais, direccionA, tipoA, fechai, fechaf, observ, tipop, pago)
-VALUES ('$imagen', '$nombre', '$apellido','$ND', '$fechaN', '$nacionalidad','$direccion',
+VALUES ('$imagen', '$nombre', '$apellido', '$ocupacio', '$ND', '$fechaN', '$nacionalidad','$direccion',
 '$ciudad', '$telefono', '$email','$pais','$direccionA', '$tipoA', '$fechai','$fechaf','$observ', '$tipop', '$pago')";
 
 $conn->exec($sql);

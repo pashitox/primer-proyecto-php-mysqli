@@ -1,9 +1,8 @@
 <?php
-$dsn='mysql:host=localhost;dbname=eldorado'; //significa Data Source Name o Nombre del Origen de los Datos
-$usuario='root';
-$password='';
+$host="localhost";
+$user="root";
+$password="";
+$db="eldorado";
+$con = new mysqli($host,$user,$password,$db);
 
-$conn = new PDO($dsn,$usuario,$password);
-
-
-  ?>
+?>

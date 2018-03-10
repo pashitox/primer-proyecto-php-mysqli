@@ -39,7 +39,7 @@
            unset($password); //destruir la variable 
           // Redirecciono al usuario a la página principal del sitio.
 
-          echo "<script>alert('¡Bienvenido, usuario logeado exitosamente'); window.location='TEMPLATE.html';</script>";  
+          echo "<script>alert('¡Bienvenido, usuario logeado exitosamente'); window.location='TEMPLATE.php';</script>";  
          }
         else
          {

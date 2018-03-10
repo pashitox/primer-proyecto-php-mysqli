@@ -1,3 +1,8 @@
+<?php
+  session_start();
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -88,7 +93,7 @@
                             <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="cerrar-sesion.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            <li><a href="../cerrar-sesion.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                             </li>
                         </ul>
                     </li>
@@ -110,13 +115,13 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="../TEMPLATE.html" class="active"><i class="fa fa-dashboard fa-fw"></i>informacion</a>
+                                <a href="../TEMPLATE.php" class="active"><i class="fa fa-dashboard fa-fw"></i>informacion</a>
                             </li>
                             <li>
                                 <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
                             </li>
                             <li>
-                                <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                                <a href="../pages/tables.php"><i class="fa fa-table fa-fw"></i> Tables</a>
                             </li>
                             
                             <li>
@@ -320,14 +325,7 @@
             <!-- /.panel -->
         </div>
         <!-- /.col-lg-12 -->
-    </div>
-    <!-- /.row -->
-</div>
-<!-- /#page-wrapper -->
-
-</div>
-<!-- /#wrapper -->
-              
+  
 
         <!-- jQuery -->
         <script src="../js/jquery.min.js"></script>
