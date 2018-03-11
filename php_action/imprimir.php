@@ -1,7 +1,13 @@
 <?php 
 # Cargamos la librería dompdf.
-require_once 'dompdf-master/dompdf_config.inc.php';
- 
+include "../dompdf/dompdf-master/dompdf_config.inc.php";
+include "../php_action/conexion.php";
+
+$id=null;
+$sql1= "select * from cliente where id=$id";
+$query = $con->query($sql1); 
+
+
 # Contenido HTML del documento que queremos generar en PDF.
 $html='
 <html>
@@ -13,6 +19,30 @@ $html='
 <body>
 
 <h2 class="titulo">¿Que es DOMPDF?</h2>
+
+<?php if($query->num_rows > 0):?>
+
+<table class="table table-bordered table-hover">
+<thead>
+<th>id</th>
+	<th>Nombre</th>
+	<th>Apellido</th>
+	<th>Email</th>
+	<th>pago</th>
+	
+	
+</thead>
+<?php while ($r=$query->fetch_array()):?>
+<tr>
+	<td><?php echo $r["id"]; ?></td>
+	<td><?php echo $r["nombre"]; ?></td>
+	<td><?php echo $r["apellido"]; ?></td>
+	<td><?php echo $r["email"]; ?></td>
+	<td><?php echo $r["pago"]; ?></td>
+	
+</tr>
+
+
 
 <p class="resaltado">Dompdf es una herramienta que permite leer un documento HTML y convertirlo a PDF. El objetivo de esta 
 herramienta no es crear un documento esteticamente profesional y personalizado, sino permitir con el mismo
@@ -39,42 +69,6 @@ $mipdf ->render();
 # Enviamos el fichero PDF al navegador.
 $mipdf ->stream('FicheroEjemplo.pdf');
 ?>
-
-<?php
-
-include "../php_action/conexion.php";
-
-$id=null;
-$sql1= "select * from cliente where id=$id";
-$query = $con->query($sql1);
-?>
-
-<?php if($query->num_rows > 0):?>
-$html='
-<table class="table table-bordered table-hover">
-<thead>
-<th>id</th>
-	<th>Nombre</th>
-	<th>Apellido</th>
-	<th>Email</th>
-	<th>pago</th>
-	
-	
-</thead>
-<?php while ($r=$query->fetch_array()):?>
-<tr>
-	<td><?php echo $r["id"]; ?></td>
-	<td><?php echo $r["nombre"]; ?></td>
-	<td><?php echo $r["apellido"]; ?></td>
-	<td><?php echo $r["email"]; ?></td>
-	<td><?php echo $r["pago"]; ?></td>
-	
-</tr>'
-
-?>
-
-
-
 
 
 
