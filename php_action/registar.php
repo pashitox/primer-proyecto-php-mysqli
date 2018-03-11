@@ -25,6 +25,7 @@ $tipop=$_POST['tipop'];
 $pago=$_POST['pago'];
 
 
+<<<<<<< HEAD
 
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -48,6 +49,9 @@ $sentencia="select * from cliente where ND='".$ND."'";
 
     } else{
                     
+=======
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+>>>>>>> origin/master
 $sql = "INSERT INTO cliente (imagen, nombre, apellido, ocupacio, ND, 
 fechaN, nacionalidad, direccion, ciudad, telefono, email, pais, direccionA, tipoA, fechai, fechaf, observ, tipop, pago)
 VALUES ('$imagen', '$nombre', '$apellido', '$ocupacio', '$ND', '$fechaN', '$nacionalidad','$direccion',
@@ -55,7 +59,13 @@ VALUES ('$imagen', '$nombre', '$apellido', '$ocupacio', '$ND', '$fechaN', '$naci
 
 $conn->exec($sql);
 echo "<script>alert('Successfully Added!!!');window.location='../pages/forms.html'</script>";
+<<<<<<< HEAD
 }
 
  
+=======
+// }
+
+// }
+>>>>>>> origin/master
 ?>

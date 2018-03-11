@@ -1,5 +1,9 @@
 <?php 
+<<<<<<< HEAD
 include "../primer-proyecto-php-mysqli/php_action/Conexion.php";
+=======
+include "../10/php_action/Conexion.php";
+>>>>>>> origin/master
 
 $sql = "SELECT * FROM cliente WHERE id";
 $query = $con->query($sql);
@@ -10,6 +14,20 @@ $r = mysqli_query($con, "SELECT SUM(pago) AS suma FROM cliente");
 $f = mysqli_fetch_assoc($r);
 echo $f["suma"];
 
+<<<<<<< HEAD
+=======
+//$totalRevenue = "";
+//while ($orderResult = $orderQuery->fetch_assoc()) {
+//	$totalRevenue = $orderResult['pago'];
+//}
+
+//$lowStockSql = "SELECT * FROM cliente WHERE quantity <= 3 AND status = 1";
+//$lowStockQuery = $con->query($lowStockSql);
+//$countLowStock = $lowStockQuery->num_rows;
+
+
+
+>>>>>>> origin/master
 ?>
 
 
@@ -23,7 +41,11 @@ echo $f["suma"];
     <meta name="description" content="">
     <meta name="author" content="">
 
+<<<<<<< HEAD
     <title>El Dorado</title>
+=======
+    <title>Startmin - Bootstrap Admin Theme</title>
+>>>>>>> origin/master
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -135,10 +157,17 @@ echo $f["suma"];
                         <a href="#" class="active"><i class="fa fa-dashboard fa-fw"></i>informacion</a>
                     </li>
                     <li>
+<<<<<<< HEAD
                         <a href="../primer-proyecto-php-mysqli/pages/forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
                     </li>
                     <li>
                         <a href="../primer-proyecto-php-mysqli/pages/tables.php"><i class="fa fa-table fa-fw"></i> Tables</a>
+=======
+                        <a href="../10/pages/forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                    </li>
+                    <li>
+                        <a href="../10/pages/tables.php"><i class="fa fa-table fa-fw"></i> Tables</a>
+>>>>>>> origin/master
                     </li>
                     
                    
@@ -167,7 +196,11 @@ echo $f["suma"];
                             <div class="col-xs-3">
                                 <i class="fa fa-comments fa-5x"></i>
                             </div>
+<<<<<<< HEAD
                             <div class="col-xs-10 text-right">
+=======
+                            <div class="col-xs-9 text-right">
+>>>>>>> origin/master
                                 <div  class="huge"> <?php                             
                                 echo $countcliente; ?></div>
                              
@@ -177,7 +210,11 @@ echo $f["suma"];
                     </div>
                     <a href="#">
                         <div class="panel-footer">
+<<<<<<< HEAD
                             <span class="pull-left">ver detalles</span>
+=======
+                            <span class="pull-left">View Details</span>
+>>>>>>> origin/master
                             <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 
                             <div class="clearfix"></div>
@@ -192,7 +229,11 @@ echo $f["suma"];
                             <div class="col-xs-3">
                                 <i class="fa fa-tasks fa-5x"></i>
                             </div>
+<<<<<<< HEAD
                             <div class="col-xs-10 text-right">
+=======
+                            <div class="col-xs-9 text-right">
+>>>>>>> origin/master
                                 <div class="huge"> </div>
                                 <div>New Tasks!</div>
                             </div>
@@ -215,7 +256,11 @@ echo $f["suma"];
                             <div class="col-xs-3">
                                 <i class="fa fa-shopping-cart fa-5x"></i>
                             </div>
+<<<<<<< HEAD
                             <div class="col-xs-10 text-right">
+=======
+                            <div class="col-xs-9 text-right">
+>>>>>>> origin/master
                                 <div class="huge">$<?php                             
                                 echo $f["suma"];
                                 ?></div>
@@ -240,7 +285,11 @@ echo $f["suma"];
                             <div class="col-xs-3">
                                 <i class="fa fa-support fa-5x"></i>
                             </div>
+<<<<<<< HEAD
                             <div class="col-xs-10 text-right">
+=======
+                            <div class="col-xs-9 text-right">
+>>>>>>> origin/master
                                 <div class="huge">13</div>
                                 <div>Support Tickets!</div>
                             </div>
