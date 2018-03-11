@@ -43,11 +43,11 @@ $sentencia="select * from cliente where ND='".$ND."'";
         if($ND==$bdND) // SHA: Security Hash Algorithm 
         {
           echo "<script>alert('¡el cliente, esta en el sistema ...!'); window.location='../pages/forms.html';</script>";  
+           die();
         }
-        else
-        {
-        
 
+    } else{
+                    
 $sql = "INSERT INTO cliente (imagen, nombre, apellido, ocupacio, ND, 
 fechaN, nacionalidad, direccion, ciudad, telefono, email, pais, direccionA, tipoA, fechai, fechaf, observ, tipop, pago)
 VALUES ('$imagen', '$nombre', '$apellido', '$ocupacio', '$ND', '$fechaN', '$nacionalidad','$direccion',
@@ -57,5 +57,5 @@ $conn->exec($sql);
 echo "<script>alert('Successfully Added!!!');window.location='../pages/forms.html'</script>";
 }
 
-// }
+ 
 ?>
