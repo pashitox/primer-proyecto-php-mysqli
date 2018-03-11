@@ -203,9 +203,10 @@ $query = $con->query($sql1);
 	<td><?php echo $r["apellido"]; ?></td>
 	<td><?php echo $r["email"]; ?></td>
 	<td><?php echo $r["pago"]; ?></td>
-	<td style="width:150px;">
+	<td style="width:200px;">
 		<a href="../php_action/editar.php?id=<?php echo $r["id"];?>" class="btn btn-sm btn-warning">Editar</a>
-		<a href="../php_action/eliminar.php?id=<?php echo $r["id"];?>" class="btn btn-sm btn-danger">Eliminar</a>
+        <a href="../php_action/eliminar.php?id=<?php echo $r["id"];?>" class="btn btn-sm btn-danger">Eliminar</a>
+        <a href="../php_action/imprimir.php?id=<?php echo $r["id"];?>" class="btn btn-sm btn-primary">imprimir</a>
 		
 	</td>
 </tr>
