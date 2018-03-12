@@ -1,6 +1,6 @@
 <?php 
 # Cargamos la librería dompdf.
-include "../dompdf/dompdf-master/dompdf_config.inc.php";
+require_once "../dompdf/dompdf_config.inc.php";
 include "../php_action/conexion.php";
 
 $id=null;
@@ -61,7 +61,7 @@ $mipdf = new DOMPDF();
 $mipdf ->set_paper("A4", "portrait");
  
 # Cargamos el contenido HTML.
-$mipdf ->load_html(utf8_decode($html));
+$mipdf ->load_html($html);
  
 # Renderizamos el documento PDF.
 $mipdf ->render();
