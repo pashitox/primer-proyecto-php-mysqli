@@ -1,6 +1,13 @@
 <?php 
 # Cargamos la librería dompdf.
-require_once "../dompdf/dompdf_config.inc.php";
+require_once '../dompdf/lib/html5lib/Parser.php';
+
+require_once '../dompdf/src/Autoloader.php';
+Dompdf\Autoloader::register();
+
+
+
+
 include "../php_action/conexion.php";
 
 $id=null;
@@ -10,64 +17,166 @@ $query = $con->query($sql1);
 
 # Contenido HTML del documento que queremos generar en PDF.
 $html='
-<html>
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Ejemplo de Documento en PDF.</title>
-<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+     <title>One Page Resume</title>
+
+     <style type="text/css">
+        * { margin: 0; padding: 0; }
+        body { font: 16px Helvetica, Sans-Serif; line-height: 24px; background: url(images/noise.jpg); }
+        .clear { clear: both; }
+        #page-wrap { width: 800px; margin: 40px auto 60px; }
+        #pic { float: right; margin: -30px 0 0 0; }
+        h1 { margin: 0 0 16px 0; padding: 0 0 16px 0; font-size: 42px; font-weight: bold; letter-spacing: -2px; border-bottom: 1px solid #999; }
+        h2 { font-size: 20px; margin: 0 0 6px 0; position: relative; }
+        h2 span { position: absolute; bottom: 0; right: 0; font-style: italic; font-family: Georgia, Serif; font-size: 16px; color: #999; font-weight: normal; }
+        p { margin: 0 0 16px 0; }
+        a { color: #999; text-decoration: none; border-bottom: 1px dotted #999; }
+        a:hover { border-bottom-style: solid; color: black; }
+        ul { margin: 0 0 32px 17px; }
+        #objective { width: 500px; float: left; }
+        #objective p { font-family: Georgia, Serif; font-style: italic; color: #666; }
+        dt { font-style: italic; font-weight: bold; font-size: 18px; text-align: right; padding: 0 26px 0 0; width: 150px; float: left; height: 100px; border-right: 1px solid #999;  }
+        dd { width: 600px; float: right; }
+        dd.clear { float: none; margin: 0; height: 15px; }
+     </style>
 </head>
+
 <body>
 
-<h2 class="titulo">¿Que es DOMPDF?</h2>
+    <div id="page-wrap">
+    
+        <img width="200" height="200" src="../images/img-01.png" alt="Photo of Cthulu" id="pic" />
 
-<?php if($query->num_rows > 0):?>
+<div id="contact-info" class="vcard">
+        
+<!-- Microformats! -->
 
-<table class="table table-bordered table-hover">
-<thead>
-<th>id</th>
-	<th>Nombre</th>
-	<th>Apellido</th>
-	<th>Email</th>
-	<th>pago</th>
+<h1 class="fn">facturacion</h1>
+
+<p>
+	Cell: <span class="tel">555-666-7777</span><br />
+	Email: <a class="email" href="mailto:greatoldone@lovecraft.com">greatoldone@lovecraft.com</a>
+</p>
+</div>
 	
+<div id="datos del cliente">
+<h2>nombre:</h2>
+<h2>Apellido:</h2>
+<h2>Num de identificacion:</h2>
+<h2>cargo o ocupacion</h2>
+<h2>Fecha Nacimineto </h2>
+<h2>Nacionalidad</h2>
+<h2>telefono</h2>
+<h2>email</h2>
+<p>
 	
-</thead>
-<?php while ($r=$query->fetch_array()):?>
-<tr>
-	<td><?php echo $r["id"]; ?></td>
-	<td><?php echo $r["nombre"]; ?></td>
-	<td><?php echo $r["apellido"]; ?></td>
-	<td><?php echo $r["email"]; ?></td>
-	<td><?php echo $r["pago"]; ?></td>
+</p>
+</div>
+
+
+
+
+<div class="clear"></div>
+
+<dl>
+<dd class="clear"></dd>
+
+<dt>detalles del pago</dt>
+<dd>
+	<h2>direccion de Aparatamento</h2>
+	<h2>Ciudad</h2>
+	<h2>tipo de pago</h2>
+	<h2>fecha de inicio</h2>
+	<h2>fecha final</h2>
+	<h2>observaciones</h2>
+	<h2>total a pagar</h2>
+
+
+	<p><strong>Major:</strong> Public Relations<br />
+	   <strong>Minor:</strong> Scale Tending</p>
+</dd>
+
+<dd class="clear"></dd>
+
+<dt>Skills</dt>
+<dd>
+	<h2>Office skills</h2>
+	<p>Office and records management, database administration, event organization, customer support, travel coordination</p>
 	
-</tr>
+	<h2>Computer skills</h2>
+	<p>Microsoft productivity software (Word, Excel, etc), Adobe Creative Suite, Windows</p>
+</dd>
 
+<dd class="clear"></dd>
 
+<dt>Experience</dt>
+<dd>
+	<h2>Doomsday Cult <span>Leader/Overlord - Baton Rogue, LA - 1926-2010</span></h2>
+	<ul>
+		<li>Inspired and won highest peasant death competition among servants</li>
+		<li>Helped coordinate managers to grow cult following</li>
+		<li>Provided untimely deaths to all who opposed</li>
+	</ul>
+	
+	<h2>The Watering Hole <span>Bartender/Server - Milwaukee, WI - 2009</span></h2>
+	<ul>
+		<li>Worked on grass-roots promotional campaigns</li>
+		<li>Reduced theft and property damage percentages</li>
+		<li>Janitorial work, Laundry</li>
+	</ul> 
+</dd>
 
-<p class="resaltado">Dompdf es una herramienta que permite leer un documento HTML y convertirlo a PDF. El objetivo de esta 
-herramienta no es crear un documento esteticamente profesional y personalizado, sino permitir con el mismo
- documento HTML generar un documento PDF para que el usuario lo pueda descargar mas facilmente.</p>
- <br>
- <img src="images/imagen1.jpg" width="500" height="180" class="centrado"> 
- 
+<dd class="clear"></dd>
+
+<dt>Hobbies</dt>
+<dd>World Domination, Deep Sea Diving, Murder Most Foul</dd>
+
+<dd class="clear"></dd>
+
+<dt>References</dt>
+<dd>Available on request</dd>
+
+<dd class="clear"></dd>
+</dl>
+
+<div class="clear"></div>
+
+</div>
+
 </body>
-</html>';
+
+</html>
+
+
+';
  
 # Instanciamos un objeto de la clase DOMPDF.
-$mipdf = new DOMPDF();
- 
-# Definimos el tamaño y orientación del papel que queremos.
-# O por defecto cogerá el que está en el fichero de configuración.
-$mipdf ->set_paper("A4", "portrait");
- 
-# Cargamos el contenido HTML.
-$mipdf ->load_html($html);
- 
-# Renderizamos el documento PDF.
-$mipdf ->render();
- 
-# Enviamos el fichero PDF al navegador.
-$mipdf ->stream('FicheroEjemplo.pdf');
+// reference the Dompdf namespace
+use Dompdf\Dompdf;
+
+// instantiate and use the dompdf class
+$dompdf = new Dompdf();
+$dompdf->loadHtml($html);
+
+// (Optional) Setup the paper size and orientation
+$dompdf->setPaper('A4', 'landscape');
+
+// Render the HTML as PDF
+$dompdf->render();
+
+// Output the generated PDF to Browser
+$dompdf->stream();
 ?>
 
 
