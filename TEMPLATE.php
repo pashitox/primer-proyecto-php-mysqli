@@ -212,15 +212,18 @@ echo $f["suma"];
                 </div>
             </div>
             <!-- <div class="col-lg-4 col-md-6"> -->
-                <div class="panel panel-red">
+            <div class="col-lg-4 col-md-7">
+                <div class="panel panel-green">
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-4">
-                                <i class="fa fa-support fa-5x"></i>
+                                <i class="fa fa-bed fa-5x"></i>
                             </div>
                             <div class="col-xs-11 text-right">
-                                <div class="huge">13</div>
-                                <div>Support Tickets!</div>
+                                <div class="huge">$<?php                             
+                                echo $f["suma"];
+                                ?></div>
+                                <div>total de pagos!</div>
                             </div>
                         </div>
                     </div>
@@ -234,7 +237,7 @@ echo $f["suma"];
                     </a>
                 </div>
             </div>
-        </div>
+              
         <!-- /.row -->
         <div class="row">
             <div class="col-lg-8">

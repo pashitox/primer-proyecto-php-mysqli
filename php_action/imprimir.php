@@ -11,9 +11,32 @@ Dompdf\Autoloader::register();
 include "../php_action/conexion.php";
 
 $id=null;
-$sql1= "select * from cliente where id=$id";
-$query = $con->query($sql1); 
+$sql1= "select * from cliente where id = ".$_GET["id"];
+$query = $con->query($sql1);
+$cliente = null;
+if($query->num_rows>0){
+while ($r=$query->fetch_object()){
+  $cliente=$r;
+  break;
+}
 
+  } 
+
+ $nombre = $cliente->nombre; 
+ $apellido = $cliente->apellido; 
+ $ND = $cliente->ND; 
+ $ocupacio = $cliente->ocupacio; 
+ $fechaN = $cliente->fechaN; 
+ $nacionalidad = $cliente->nacionalidad; 
+ $telefono = $cliente->telefono; 
+ $email = $cliente->email; 
+ $direccion = $cliente->direccion; 
+ $direccionA = $cliente->direccionA; 
+ $tipop = $cliente->tipop;
+ $pago = $cliente->pago;  
+ $fechai = $cliente->fechai;
+ $fechaf = $cliente->fechaf;  
+ $observ = $cliente->observ;  
 
 # Contenido HTML del documento que queremos generar en PDF.
 $html='
@@ -71,14 +94,14 @@ $html='
 </div>
 	
 <div id="datos del cliente">
-<h2>nombre:</h2>
-<h2>Apellido:</h2>
-<h2>Num de identificacion:</h2>
-<h2>cargo o ocupacion</h2>
-<h2>Fecha Nacimineto </h2>
-<h2>Nacionalidad</h2>
-<h2>telefono</h2>
-<h2>email</h2>
+<h2>nombre: '.$nombre.'</h2>
+<h2>Apellido:'.$apellido.'</h2>
+<h2>Num de identificacion:'.$ND.'</h2>
+<h2>cargo o ocupacion: '.$ocupacio.'</h2>
+<h2>Fecha Nacimineto: '.$fechaN.' </h2>
+<h2>Nacionalidad: '.$nacionalidad.'</h2>
+<h2>telefono: '.$telefono.'</h2>
+<h2>email: '.$email.'</h2>
 <p>
 	
 </p>
@@ -91,58 +114,23 @@ $html='
 
 <dl>
 <dd class="clear"></dd>
-
+<div id="contact-info" class="vcard">
 <dt>detalles del pago</dt>
 <dd>
-	<h2>direccion de Aparatamento</h2>
-	<h2>Ciudad</h2>
-	<h2>tipo de pago</h2>
-	<h2>fecha de inicio</h2>
-	<h2>fecha final</h2>
-	<h2>observaciones</h2>
-	<h2>total a pagar</h2>
+	<h2>direccion de Aparatamento: '.$direccionA.' </h2>
+	
+	<h2>tipo de pago: '.$tipop.'</h2>
+	<h2>fecha de inicio: '.$fechai.'</h2>
+	<h2>fecha final: '.$fechaf.'</h2>
+	<h2>observaciones: '.$observ.'</h2>
+	<h2>total a pagar: '.$pago.'$</h2>
 
-
+</div>
 	<p><strong>Major:</strong> Public Relations<br />
 	   <strong>Minor:</strong> Scale Tending</p>
 </dd>
 
-<dd class="clear"></dd>
 
-<dt>Skills</dt>
-<dd>
-	<h2>Office skills</h2>
-	<p>Office and records management, database administration, event organization, customer support, travel coordination</p>
-	
-	<h2>Computer skills</h2>
-	<p>Microsoft productivity software (Word, Excel, etc), Adobe Creative Suite, Windows</p>
-</dd>
-
-<dd class="clear"></dd>
-
-<dt>Experience</dt>
-<dd>
-	<h2>Doomsday Cult <span>Leader/Overlord - Baton Rogue, LA - 1926-2010</span></h2>
-	<ul>
-		<li>Inspired and won highest peasant death competition among servants</li>
-		<li>Helped coordinate managers to grow cult following</li>
-		<li>Provided untimely deaths to all who opposed</li>
-	</ul>
-	
-	<h2>The Watering Hole <span>Bartender/Server - Milwaukee, WI - 2009</span></h2>
-	<ul>
-		<li>Worked on grass-roots promotional campaigns</li>
-		<li>Reduced theft and property damage percentages</li>
-		<li>Janitorial work, Laundry</li>
-	</ul> 
-</dd>
-
-<dd class="clear"></dd>
-
-<dt>Hobbies</dt>
-<dd>World Domination, Deep Sea Diving, Murder Most Foul</dd>
-
-<dd class="clear"></dd>
 
 <dt>References</dt>
 <dd>Available on request</dd>
